@@ -6,4 +6,4 @@
 
 ## Отображение на мобильных устройствах
 
-![mobile maket](/design/mobile-design.jpg'Отображение на мобильных устройствах')
+![mobile maket](/design/mobile-design.jpg 'Отображение на мобильных устройствах')
