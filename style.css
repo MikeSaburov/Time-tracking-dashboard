@@ -28,3 +28,11 @@
   /*Закругление*/
   --radius: 1rem;
 }
+
+body {
+  margin: 0;
+  background-color: var(--blue-900);
+  font-family: var(--family);
+  font-size: var(--fs-base);
+  color: white;
+}
