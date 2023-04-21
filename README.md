@@ -4,12 +4,12 @@
 
 ## Отображение на настольных ПК
 
-![desktop maket](/design/desktop-design.jpg 'Отображение на десктопе')
+<p align="center">
+  <img  src="/design/desktop-design.jpg">
+</p>
 
 ## Отображение на мобильных устройствах
 
 <p align="center">
-
   <img  src="/design/mobile-design.jpg">
-
 </p>
