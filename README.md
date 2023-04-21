@@ -1,8 +1,10 @@
 # Time-tracking-dashboard
 
-<p>Верстка проекта с ресурса </p>
+<p>Верстка проекта с ресурса
 
-<p><a href="https://www.frontendmentor.io" target="_blank">Frontend Mentor</a></p>
+<a href="https://www.frontendmentor.io" target="_blank">Frontend Mentor</a>
+
+</p>
 
 ## Отображение на настольных ПК
 
