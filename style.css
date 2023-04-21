@@ -36,3 +36,11 @@ body {
   font-size: var(--fs-base);
   color: white;
 }
+
+.dashboard {
+  min-height: 100vh;
+  padding: 4rem 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
