@@ -6,4 +6,8 @@
 
 ## Отображение на мобильных устройствах
 
-![mobile maket](/design/mobile-design.jpg 'Отображение на мобильных устройствах')
+<p align="center">
+
+  <img  src="/design/mobile-design.jpg">
+
+</p>
