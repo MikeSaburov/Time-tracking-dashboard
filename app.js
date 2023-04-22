@@ -16,13 +16,13 @@ class DashboardItem {
     this.container = document.querySelector(container);
     this.view = view;
 
-    this.createMarkup();
+    this._createMarkup();
   }
 
-  createMarkup() {
+  _createMarkup() {
     const { title, timeframes } = this.data;
     const id = title.toLocaleLowerCase().replace(/ /g, '-');
-    const { current, previous } = timeframes[this.view.toLocaleLowerCase()];
+    const { current, previous } = timeframes[this.view.toLowerCase()];
 
     this.container.insertAdjacentHTML(
       'beforeend',
@@ -39,7 +39,9 @@ class DashboardItem {
             </header>
             <div class="tracking-card__body">
               <div class="tracking-card__time">${current}hrs</div>
-              <div class="tracking-card__prev-period">Last ${DashboardItem.PERIODS.view} - ${previous}hrs</div>
+              <div class="tracking-card__prev-period">Last ${
+                DashboardItem.PERIODS[this.view]
+              } - ${previous}hrs</div>
             </div>
           </article>
         </div>
@@ -49,14 +51,33 @@ class DashboardItem {
     this.time = this.container.querySelector(
       `.dashboard__item--${id} .tracking-card__time`
     );
-    this.rev = this.container.querySelector(
+    this.prev = this.container.querySelector(
       `.dashboard__item--${id} .tracking-card__prev-period`
     );
+  }
+  changeView(view) {
+    this.view = view.toLowerCase();
+    const { current, previous } = this.data.timeframes[this.view];
+    this.time.innerText = `${current}hrs`;
+    this.prev.innerText = `Last ${
+      DashboardItem.PERIODS[this.view]
+    } - ${previous}hrs`;
   }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   getDashboardData().then((data) => {
     const activities = data.map((activity) => new DashboardItem(activity));
+    const selectors = document.querySelectorAll('.view-selector__item');
+    selectors.forEach((selector) =>
+      selector.addEventListener('click', function () {
+        selectors.forEach((sel) =>
+          sel.classList.remove('view-selector__item--active')
+        );
+        selector.classList.add('view-selector__item--active');
+        const currentView = selector.innerText.trim().toLowerCase();
+        activities.forEach((activity) => activity.changeView(currentView));
+      })
+    );
   });
 });
